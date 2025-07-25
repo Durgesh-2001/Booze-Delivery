@@ -1,0 +1,132 @@
+.dashboard {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+}
+
+.dashboard__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.dashboard__error {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.dashboard__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  flex: 1 1 18%;
+  min-width: 180px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item__title {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.stat-item__count {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.highlight-revenue .stat-item__count {
+  color: #2ecc71; /* Green color */
+  font-weight: bold;
+}
+
+
+.stat-item.pending {
+  border-left: 6px solid #FFC107;
+}
+
+.stat-item.delivered {
+  border-left: 6px solid #4CAF50;
+}
+
+.stat-item.revenue {
+  border-left: 6px solid #F44336;
+}
+.dashboard__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.recent-orders, .top-products {
+  flex: 1 1 48%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.recent-orders h2, .top-products h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-table th {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.dashboard-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dashboard__loading {
+  font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+  margin-top: 5rem;
+}

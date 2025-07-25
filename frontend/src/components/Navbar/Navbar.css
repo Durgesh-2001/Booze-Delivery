@@ -1,0 +1,247 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    color: #2c3e50;
+}
+
+.navbar-logo img {
+    height: 45px;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+    color: #e67e22;
+    background-color: #f8f9fa;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 0.9rem;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.navbar-cart img, .order-icon {
+    width: 45px;
+    height: 45px;
+    filter: invert(30%);
+    transition: filter 0.3s ease;
+    animation: shake 3s ease-in-out infinite;  /* Changed timing and removed play-state */
+}
+
+/* Add styles for bell icon and search icon */
+.search-input-wrapper img 
+ {
+    width: 35px;
+    height: 35px;
+    animation: shake 3s ease-in-out infinite;
+
+}
+
+img[alt="notifications"] {
+    width: 45px;
+    height: 45px;
+}
+
+.navbar-cart:hover img, .order-icon:hover {
+    filter: invert(50%);
+}
+
+.navbar-cart {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e67e22;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.login-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.login-btn:not(.logged-in) {
+    background-color: #e67e22;
+    color: white;
+}
+
+.login-btn.logged-in {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.login-btn.logged-in:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.welcome-text {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0;
+    animation: welcomeFade 1s ease-out forwards;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes welcomeFade {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-text {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    min-width: 18px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .search-input {
+        width: 200px;
+    }
+
+    .search-results {
+        width: 250px;
+    }
+}

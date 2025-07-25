@@ -1,0 +1,34 @@
+:root {
+  --primary: #8B4513;      /* Saddle Brown - for main brand color */
+  --primary-dark: #5C2E0D; /* Darker brown for hover states */
+  --secondary: #DAA520;    /* Golden Rod - for accents */
+  --danger: #DC3545;       /* For error states and warnings */
+  --success: #28A745;      /* For success states */
+  --background: #F5F5DC;   /* Beige background */
+  --text: #2C1810;         /* Dark brown text */
+  --text-light: #5A4B43;   /* Lighter text for secondary content */
+  --card-bg: #FFF8E7;      /* Light cream for cards */
+  --border: #D2B48C;       /* Tan color for borders */
+  --shadow: rgba(139, 69, 19, 0.1); /* Brown-tinted shadows */
+}
+
+/* Global styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+}

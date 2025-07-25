@@ -1,0 +1,193 @@
+.header {
+    height: 90vh;
+    max-height: 800px;
+    min-height: 400px;
+    margin: 20px auto;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    ), url('/header_img.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 90%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    isolation: isolate;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(255, 255, 255, 0.1) 48%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 52%,
+        transparent 55%
+    );
+    transform: rotate(45deg);
+    animation: shine 10s infinite linear;
+    pointer-events: none;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Changed to align left */
+    justify-content: flex-end;  /* Changed to align bottom */
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 0 5% 5% 5%;  /* Added bottom padding */
+    box-sizing: border-box;
+    animation: slideUp 1s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;  /* Changed to align text left */
+}
+
+.header-contents h2 {
+    font-weight: 600;
+    color: white;
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    animation: fadeInLeft 0.8s ease-out 0.2s both;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-contents p {
+    font-size: clamp(16px, 1.5vw, 20px);
+    color: white;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0;  /* Removed auto margins */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInLeft 0.8s ease-out 0.4s both;
+}
+
+.header-contents button {
+    border: none;
+    color: #333;
+    font-weight: 500;
+    padding: 15px 30px;
+    background-color: white;
+    font-size: clamp(14px, 1.2vw, 16px);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-contents button:hover {
+    background-color: #fff4f2;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%) rotate(45deg); }
+    to { transform: translateX(100%) rotate(45deg); }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        width: 95%;  /* Slightly wider on mobile */
+        height: 80vh;
+        min-height: 300px;
+        margin: 10px auto;  /* Reduced margin on mobile */
+        border-radius: 15px;  /* Smaller border radius on mobile */
+    }
+
+    .header-contents {
+        padding: 0 5% 8% 5%;  /* Increased bottom padding on mobile */
+        gap: 15px;
+    }
+
+    .header-contents button {
+        padding: 12px 25px;
+    }
+}

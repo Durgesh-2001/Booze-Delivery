@@ -1,0 +1,181 @@
+.orders-page {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.orders-loading,
+.no-orders {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #777;
+  margin-top: 2rem;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.order-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, border 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+.order-card:hover {
+  transform: scale(1.015);
+  border: 1px solid var(--primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.order-date {
+  font-size: 0.95rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #fafafa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.order-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.item-details h4 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.item-details p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  gap: 1rem;
+}
+
+.order-footer-content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+
+.payment-info {
+  flex: 1;
+  padding: 0.5rem 1rem 0 0;
+}
+
+.payment-info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.payment-info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.order-total {
+  text-align: right;
+  min-width: 250px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+}
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.payment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85em;
+  color: #666;
+}
+
+.payment-details p {
+  margin: 0;
+}
+
+/* ✨ Bonus: Animate card entrance */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

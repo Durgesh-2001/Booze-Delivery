@@ -1,0 +1,231 @@
+/* General styles */
+.order-status {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Status bar container */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Individual status steps */
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 100px;
+  text-align: center;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.status-line {
+  height: 4px;
+  width: 40px;
+  background-color: #ccc;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+/* When the step is completed, turn the line green */
+.status-line.completed {
+  background-color: green;
+}
+
+/* Icon styles */
+.step-icon {
+  font-size: 28px;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+  color: #ccc; /* Default color */
+}
+
+.status-step.active .step-icon {
+  color: #007bff; /* Blue for active */
+}
+
+.status-step.completed .step-icon,
+.status-step.active[data-status="Delivered"] .step-icon {
+  color: green; /* Green for completed */
+}
+
+/* Label text */
+.step-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.status-step.completed .step-label,
+.status-step.active[data-status="Delivered"] .step-label {
+  color: green;
+}
+
+/* Animations for icons */
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+.move-forward {
+  animation: moveForward 1s infinite;
+}
+
+.pop {
+  animation-timing-function: ease-in-out;
+}
+
+/* Keyframes for animation effects */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes moveForward {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+.status-text {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+}
+
+.status-text strong {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.status-text span {
+  font-weight: 750;
+  color: #000000;
+}
+
+.countdown {
+  font-size: 1.2em;
+  color: #ff5722;
+  font-weight: bold;
+  margin-left: auto;
+}
+.cancel-order-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #f44336;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-order-btn:hover {
+  background-color: #d32f2f;
+}
+
+.cancel-order-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Fake map for the delivery stage */
+.fake-map {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px dashed #999;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+}
+
+.animated-stage {
+  animation: pulse 1s infinite;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #ff5722;
+}
+
+/* Pulse animation for animated stages */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Order cancelled message */
+.order-cancelled-message {
+  background-color: #ffebee;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.order-cancelled-message p {
+  font-size: 1.2em;
+  color: #e53935;
+}
+
+/* Delivery complete message */
+.delivery-complete-message {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.delivery-complete-message p {
+  font-size: 1.2em;
+  color: #388e3c;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .status-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .status-step {
+    margin-bottom: 20px;
+  }
+
+  .status-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .countdown {
+    font-size: 1.2em;
+  }
+
+  .cancel-order-btn {
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+  .fake-map {
+    padding: 15px;
+  }
+
+  .animated-stage {
+    font-size: 1em;
+  }
+}
